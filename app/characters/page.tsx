@@ -1,4 +1,4 @@
-import { link } from "fs";
+import Link from "next/link";
 
 interface CharactersApi {
   results: CharacterResults[];
@@ -25,12 +25,14 @@ export default async function CharacterPage() {
     <ul className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
       {data.results.map((char) => (
         <li key={char.id}>
-          <div>
-            <img className="w-full" src={char.image} alt="" />
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold">{char.name}</h2>
-          </div>
+          <Link href={`/characters/${char.id}`}>
+            <div>
+              <img className="w-full" src={char.image} alt="" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold">{char.name}</h2>
+            </div>
+          </Link>
         </li>
       ))}
     </ul>
