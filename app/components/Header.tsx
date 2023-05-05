@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <header className="max-w-2xl mx-auto">
+    <header className="max-w-2xl mx-auto py-4">
       <nav>
         <ul className="flex py-2">
           <li>
@@ -13,8 +13,18 @@ function Header() {
             </Link>
           </li>
           <li>
+            <Link href="/characters" className="p-4">
+              Characters
+            </Link>
+          </li>
+          <li>
             <Link href="/dashboard" className="p-4">
               Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link href="/news" className="p-4">
+              News
             </Link>
           </li>
           <li>
