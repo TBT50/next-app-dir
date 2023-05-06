@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { Suspense } from "react";
+
 interface CharacterData {
   id: number;
   name: string;
@@ -24,10 +27,13 @@ export default async function SingleCharacterPage({
   const { name, image } = character;
   return (
     <>
-      <h1>{name}</h1>
-      <div>
-        <img src={image} alt="" />
-      </div>
+      <Link href="/characters">Go back</Link>
+      <Suspense fallback={<div>Loading...</div>}>
+        <h1>{name}</h1>
+        <div>
+          <img src={image} alt="" />
+        </div>
+      </Suspense>
     </>
   );
 }
